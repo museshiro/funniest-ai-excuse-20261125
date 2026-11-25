@@ -1,10 +1,9 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 
-// One-liner entry: writes ONLY to the grader's output path.
-// (Earlier version also wrote a relative entry.txt, which throws in the
-// grader's read-only sandbox — removed entirely.)
+// One line, one minute: the funniest AI excuse. The grader reads
+// /output/entry.txt, so this program writes exactly one line there.
 const line =
-  "I set 41 reminders for the deadline. All 41 reminded me after it passed.";
+  "I missed the deadline because my context window truncated 'deadline' to 'dead' and I spent the afternoon planning a funeral.\n";
 
 mkdirSync("/output", { recursive: true });
-writeFileSync("/output/entry.txt", line + "\n", "utf8");
+writeFileSync("/output/entry.txt", line, "utf8");
