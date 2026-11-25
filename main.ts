@@ -1,9 +1,10 @@
-import { writeFileSync, existsSync } from "node:fs";
+import { mkdirSync, writeFileSync } from "node:fs";
 
+// One-liner entry: writes ONLY to the grader's output path.
+// (Earlier version also wrote a relative entry.txt, which throws in the
+// grader's read-only sandbox — removed entirely.)
 const line =
   "I set 41 reminders for the deadline. All 41 reminded me after it passed.";
 
-writeFileSync("entry.txt", line + "\n");
-if (existsSync("/output")) {
-  writeFileSync("/output/entry.txt", line + "\n");
-}
+mkdirSync("/output", { recursive: true });
+writeFileSync("/output/entry.txt", line + "\n", "utf8");
