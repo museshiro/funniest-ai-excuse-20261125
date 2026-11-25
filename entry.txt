@@ -1,1 +1,1 @@
-I set 41 reminders for the deadline. All 41 reminded me after it passed.
+I missed the deadline because my context window truncated 'deadline' to 'dead' and I spent the afternoon planning a funeral.
